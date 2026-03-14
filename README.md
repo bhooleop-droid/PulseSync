@@ -1,6 +1,6 @@
 # PulseSync 🎵✨
 
-Live Demo: [https://pulsesyncapp.netlify.app](https://pulsesyncapp.netlify.app)
+Live Demo: (https://pulsesyncapp.netlify.app)
 
 PulseSync is an interactive, real-time music visualizer built with React, the Web Audio API, Tailwind CSS, and Framer Motion. It transforms audio frequencies into beautiful, responsive graphics that react to the beat of your music.
 
