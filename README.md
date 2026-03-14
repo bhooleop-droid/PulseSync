@@ -1,73 +1,66 @@
-# React + TypeScript + Vite
+# PulseSync 🎵✨
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Live Demo: [https://pulsesyncapp.netlify.app](https://pulsesyncapp.netlify.app)
 
-Currently, two official plugins are available:
+PulseSync is an interactive, real-time music visualizer built with React, the Web Audio API, Tailwind CSS, and Framer Motion. It transforms audio frequencies into beautiful, responsive graphics that react to the beat of your music.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Features
 
-## React Compiler
+- **Dual Audio Sources**: 
+  - Upload any local audio file (`.mp3`, `.wav`, etc.) to watch its visualization.
+  - Connect your live microphone to see real-time visualizations of your voice or surrounding environment.
+- **Three Unique Visualization Modes**:
+  - 📊 **Neon Bars**: Classic vertical frequency bars featuring a dynamic purple-to-pink-to-blue gradient.
+  - 🌀 **Radial**: A circular waveform representation with a pulsing glowing core driven by bass frequencies.
+  - ✨ **Particles**: An explosive particle system where particles burst outwards relative to bass impacts, and float gracefully based on treble frequencies.
+- **Premium UI & Aesthetics**:
+  - Completely dark-themed layout built with Tailwind CSS v4.
+  - Frosted-glass (glassmorphism) control panels with glowing neon accents.
+  - Silky smooth UI transitions and layout animations powered by Framer Motion.
+- **Highly Performant**:
+  - Built entirely on the HTML5 `<canvas>` element.
+  - Uses `requestAnimationFrame` for a highly optimized, jank-free 60+ FPS render cycle.
+  - Fully responsive design that adapts to any screen size instantly via `ResizeObserver`.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Technology Stack
 
-## Expanding the ESLint configuration
+- **Framework**: [React 19](https://react.dev/) + [Vite](https://vitejs.dev/) (TypeScript)
+- **Styling**: [Tailwind CSS v4](https://tailwindcss.com/)
+- **Animations**: [Framer Motion](https://www.framer.com/motion/)
+- **Icons**: [Lucide React](https://lucide.dev/)
+- **Core Engine**: [Web Audio API](https://developer.mozilla.org/en-US/docs/Web/API/Web_Audio_API) (`AnalyserNode`)
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## Running Locally
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+To run PulseSync on your local machine:
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+1. **Clone the repository**:
+   ```bash
+   git clone https://github.com/bhooleop-droid/PulseSync.git
+   cd PulseSync
+   ```
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+2. **Install dependencies**:
+   ```bash
+   npm install
+   ```
+
+3. **Start the development server**:
+   ```bash
+   npm run dev
+   ```
+
+4. Open your browser and navigate to `http://localhost:5173`.
+
+## Deployment
+
+This project requires no backend and is configured to be easily deployed as a static site to hosts like Netlify, Vercel, or GitHub Pages.
+
+To build the production bundle:
+```bash
+npm run build
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## License
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+This project is open-source. Feel free to fork, modify, and build upon it!
