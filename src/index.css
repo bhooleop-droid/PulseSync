@@ -1,0 +1,17 @@
+@import "tailwindcss";
+
+@layer base {
+  body {
+    @apply bg-zinc-950 text-white m-0 min-h-screen font-sans antialiased overflow-hidden;
+  }
+}
+
+/* Custom Utilities for Glassmorphism and Neon */
+@layer utilities {
+  .glass-panel {
+    @apply bg-white/10 backdrop-blur-lg border border-white/20 shadow-2xl;
+  }
+  .neon-text-primary {
+    text-shadow: 0 0 10px rgba(139, 92, 246, 0.8), 0 0 20px rgba(139, 92, 246, 0.5);
+  }
+}
